@@ -1,0 +1,415 @@
+local_authority,road_name,status,source_url
+Torfaen,"Newport Road (from Rougemont roundabout to Llantarnam Parkway roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Llantarnam Park Way (from Newport Road to Cwmbran Drive)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Newport Road (from Llantarnam Road to Crown roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Llantarnam Road (from Court Road to Llanfrechfa Way)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Llanfrechfa Way (from Llantarnam Road to entrance of Northfields skate park)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"B4236 Caerleon Road (from Turnpike roundabout to Twmbarlwm View, including The Grange roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Henllys Way (from Llantarnam Road to A4051 Cwmbran Drive roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Henllys Way (from A4051 Cwmbran Drive roundabout to Cocker Avenue)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Ty Coch Way (for its entire length)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Hollybush Way (from Two Locks Road roundabout to approximately 100m south east of the Cemetery junction)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Hollybush Way (from Two Locks Road roundabout to Henllys Way roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Henllys Way (from Hollybush Way roundabout to Stevelee)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Henllys Way (from Hollybush Way roundabout to Ty Gwyn Way roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Penylan Way (for its entire length)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Ty Gwyn Way (from Henllys Way roundabout for approximately 486m in a north westerly direction)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Ty Gwyn Way (from Marlborough Road to Greenmeadow Way roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Thornhill Road (from Ty Gwyn Way to Aran Court)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Greenforge Way (from Greenmeadow Way roundabout to Springvale roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Greenforge Way (from Springvale roundabout to A4051 Cwmbran Drive, including Springvale roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Springvale Way (from Greenforge Way roundabout to Maendy Way roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Maendy Way (from Bryn Celyn Road, including Springvale Way roundabout and Chapel Road roundabout, to Caradoc Road)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"A4051 Cwmbran Drive link road (from Chapel Street to Woodside Road)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Caradoc Road (from its intersection with Maendy Way to Morrisons roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Llywelyn Road (from Maendy Way to Tudor Road roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Tudor Road (from St David's Road roundabout to A4051 Cwmbran Drive, including Llywelyn Road roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Edlogan Way (from Morrisons roundabout to Woodland Road roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"St Davids Road (from Llanfrechfa Way roundabout to Station Road, including Tudor Road roundabout and Morrisons roundabout)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Avondale Road (from Station Road to Pontrhydyrun Road)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"A4051 Cwmbran Drive (from approximately 100m south west of Bevans Lane roundabout for approximately 629m in a southerly direction)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Newport Road (from Rechem roundabout for approximately 486m in an easterly direction)",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Newport Road (from Newport Road for a distance of approximately 650m in a southerly direction), Pimlico, Pontypool",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Pontyfelin Road (for its entire length), Panteg",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"Old Crumlin Road (from Twmpath Road to Parkes Lane), Pontypool",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"B4246 (from Gladstone Terrace to Kears Row), Abersychan",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"A4043 Cwmavon Road (from Ffrwd Road for approximately 1393m in a northerly direction), Abersychan",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Torfaen,"B4246 Abergavenny Road (from Rifle Street to King Street), Blaenavon",original_exception,https://swoop.torfaen.gov.uk/en/RoadsTravelParking/RoadsAndPavements/20mph/30mph-exceptions/30mph-exceptions.aspx
+Wrexham,"B5445 Marford Hill, Marford",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5445 Chester Road, Gresford",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A5152 Chester Road, Acton (A483 - Garden Village)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A5152 Chester Road, Acton (Garden Village - City)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Ty Gwyn Lane, Acton",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5100 Rhosnesni Lane, Acton",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Jeffreys Road, Borras",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A534 Holt Road, Wrexham (Hullah Lane to Greyhound)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A534 Holt Road, Borras (Greyhound to Link Road)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A525 Ruthin Road, Wrexham",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A541 Mold Road, Gwersyllt",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A525 Kingsmills Road, Hightown",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Kingsmills Loop (Old A525)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Abenbury Road, Abenbury",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Cefn Road, Abenbury",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A525 Marchwiel Road/Bangor Road, Marchwiel",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A528 Overton Road, Marchwiel",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A525 Bangor Road, Cross Lanes",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5130 Holt Road/Kiln Lane, Cross Lanes",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5425 New Road/Main Road/Llay New Road, Rhosrobin",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Plas Acton Road, Pandy",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5425 Llay New Road, Llay",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5102 Straight Mile/Croeshowell Hill, Llay",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Gegin Lane, Llay",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Higher Lane, Llay",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Chapel Lane, Llay",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Phoenix Drive, Brymbo",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"New High Street, Brymbo",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Railway Road, Brymbo",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5101, The Lodge",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5426 Wern Road, Minera",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5426 Minera Hall Road, Minera",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5426, The Wern",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5605 Park Road/Newbridge Road, Rhosymedre",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A539 Llangollen Road, Trevor",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A539 Llangollen Road, Acrefair",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5070, Chirk",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5070, Chirk (buffer)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5605 Wrexham Road, Johnstown",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5605 Ruabon Road, Johnstown",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Vauxhall Industrial Estate, Johnstown",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5605 Ruabon Road, Ruabon",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5605 New High Street, Ruabon",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5605 Bridge Street, Ruabon",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"A539/B5605 Ruabon Roundabout",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"B5097 Plas Bennion to Tatham Road",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Plas Bennion Road/Copperas Hill",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Wrexham,"Plas Bennion Road (buffer)",reverted_after_review,https://www.wrexham.gov.uk/sites/default/files/2025-05/coet2325.pdf
+Isle of Anglesey,"Amlwch A5025",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Bull Bay A5025",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Lon Parys-Ffordd Madyn",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Bodffordd A5 approach",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Rhosmeirch Coedana approach",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llangefni Industrial Estate",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Talwrn old school road",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Caergeiliog A5",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanfachraeth A5025",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanfihangel yn Nhowyn RAF Valley approach",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Bryn Du",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Valley A5 Gorad approach",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanddaniel A5 approach",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanddaniel Ffingar approach",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanddaniel level crossing",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Trearddur Bay B4545",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Parc Cybi, Holyhead (A5153)",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Victoria Road, Holyhead (A5154)",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanfairpwll A5025",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llandegfan Ffordd yr Eglwys",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Llanfaes",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Pentraeth Talwrn approach B5109",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Pentraeth Beaumaris approach B5109",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Isle of Anglesey,"Benllech A5025",reverted_after_review,https://wrexham.com/northdotwales/anglesey-county-council-agrees-to-revert-20mph-speed-limits-to-30mph-on-22-roads-278437.html
+Conwy,"B5115 from Brompton Avenue through Llandudno Road, Bae Penrhyn",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B5115 Colwyn Road, Llandudno to Conway Road, Llanrhos",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"Bryn Lupus Road, Llanrhos",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"Rhos Promenade and Marine Drive, Llandrillo-yn-Rhos",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"Glan y Mor Road, Bae Penrhyn",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B5106 from Gyffin through Tal y Bont",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B5106 Dolgarrog to Trefriw",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"A547 Llanddulas Road, Abergele",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"A547 Abergele Road (Wynnstay Road to 40mph section), Old Colwyn",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"A547 Conwy bridge",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"A548 Foryd Road and Towyn Road",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B5383 Rotary Way, Old Colwyn",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"St Asaph Avenue, Kinmel Bay",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B5113 Kings Drive to Llanrwst Road, Bryn y Maen",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B5279 Tyn y Groes Road",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"Meirion Drive, Conwy",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"B4406 Penmachno to A5",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"Conway Old Road to Sychnant Pass",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Conwy,"Maesdu Avenue, Deganwy",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/full-list-north-wales-roads-33299823
+Flintshire,"A549 Mold Road, Mynydd Isa",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"A549 Chester Road / Dirty Mile - Little Mountain, Buckley",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"B5127 Liverpool Road, Buckley",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"B5128 Church Road, Buckley",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"Drury Lane, Buckley",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"St Davids Park, Ewloe",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"White Farm Road, Buckley",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"A541 Hendre",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"A541 Denbigh Road, Mold",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"A5104 Warren Bank Interchange, Broughton",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"A5026 Holway Road, Holywell",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"B5121 Greenfield Road, Holywell",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"B5129 Kelsterton Road, Kelsterton",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Flintshire,"B5129 Queensferry Roundabout",proposed_not_confirmed,https://www.flintshire.gov.uk/en/Resident/Council-Apps/NewsPortlet.aspx?id=14555
+Gwynedd,"A499 at Llanbedrog",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/list-20mph-roads-north-wales-32319784
+Gwynedd,"A496 at Bontddu",proposed_not_confirmed,https://www.dailypost.co.uk/news/north-wales-news/list-20mph-roads-north-wales-32319784
+Gwynedd,"A494 at Bala",proposed_not_confirmed,https://www.cambrian-news.co.uk/news/parts-of-a487-in-aberystwyth-and-machynlleth-set-to-go-back-to-30mph-880345
+Cardiff,"Newport Road (entire length, except section outside St Illtyd's Catholic School)",reverted_after_review,https://www.gbnews.com/lifestyle/cars/cardiff-roads-30mph-20mph-speed-limit
+Cardiff,"Western Avenue (small section west of Taff River Bridge to junction with Cardiff Road/Llandaff Road)",reverted_after_review,https://www.gbnews.com/lifestyle/cars/cardiff-roads-30mph-20mph-speed-limit
+Cardiff,"Ocean Way (junction with Beignon Close to Rover Way)",reverted_after_review,https://www.gbnews.com/lifestyle/cars/cardiff-roads-30mph-20mph-speed-limit
+Cardiff,"Hadfield Road (between Leckwith Road and Penarth Road)",reverted_after_review,https://www.gbnews.com/lifestyle/cars/cardiff-roads-30mph-20mph-speed-limit
+Swansea,"A48 Penllergaer to Pontlliw",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4295 The Promenade, Penclawdd",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4296 Pentre Road, Pontardulais",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4296 Pentre Road, Grovesend",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4296 Coalbrook Road, Grovesend",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4436 Mayals Road",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4620 Swansea Road/Carmarthen Road, Llewitha",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"B4603 Clydach Road (three sections)",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Carmel Road",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Brynmill Lane",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Gors Avenue",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Townhill Road",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Heol Ddu",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Heol y Cwmdu",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Mynydd Newydd Road",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Pant Lasau Road",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Swansea,"Pentregethin Road",proposed_not_confirmed,https://swanseabaynews.com/revealed-the-17-swansea-roads-that-will-change-from-20-to-30mph/
+Newport,"A4042 (on-slip/off-slip, northbound/southbound sections)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"A4051 Malpas Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"A48 Southern Distributor Road (eastbound and westbound)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Harlequin Roundabout",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Old Green Interchange",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Ebbw Bridge Roundabout",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Forge Road Roundabout",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Tredegar House Roundabout (Pencarn Way)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Afon Ebbw Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Azalea Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Barrack Hill",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Belmont Hill",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Blacksmiths Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Broadstreet Common B4239",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Broad Quay Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Broadwater Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Brunel Street",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Caerleon Road (two sections)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Caerphilly Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Cardiff Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Caswell Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Catsash Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Chartist Drive",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Christchurch Hill",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Christchurch Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Church Street",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Clarence Place",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Clearwater Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Cleppa Park",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Coast Road B4239 (multiple sections)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Coomassie Street",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Corporation Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Curlew Close",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Cwm Lane",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Docks Way A48 (multiple sections)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Duffryn Drive",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Duffryn Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"East Bank Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"East Way Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Estuary Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Freshwater Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"George Street Bridge",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Goldcliff Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Greenmoor Arch Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Green Street",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Greenwich Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Groes Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Imperial Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Kingsway (northbound and southbound)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Lake Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Langland Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Lee Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Leeway Court",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Longditch Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Magor Road (two sections)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Mariner Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Market Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Marshfield Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Meadowland Drive",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Mill Parade",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Nash Mead",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"New Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"New Quay Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"North Lake Drive",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"North Row",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Oxwich Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Park View",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Pencarn Lane",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Pencarn Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Pillmawr Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Plover Close",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Ponthir Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Port Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Queens Hill",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Queen's Way",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Royal Oak Hill",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"South Lake Drive",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Stephenson Street",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"The Coldra (eastbound and westbound)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Traston Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Tregwilym Road (northern section)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Usk Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Usk Way (multiple sections and junctions)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"Waltwood Road (two sections)",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Newport,"West Way Road",original_exception,https://herald.wales/south-wales/newport-publishes-which-roads-will-be-exempt-from-20mph-default-speed-limits/
+Rhondda Cynon Taf,"A4059 in Penderyn, north of the school",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"A4059 in Penderyn, south of the school",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Hirwaun Industrial Estate",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Swansea Road/Merthyr Road, Hirwaun",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Llanwonno Road, Mountain Ash",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Abercynon Link Road (B4275)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Berw Road, Pontypridd (B4273)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Sardis Road, Pontypridd",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Coedcae Lane, Pontyclun",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Ynyshir Road (Wattstown roundabout)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Penrhys Road, Tylorstown (B4512)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Hirwaun Road, Trewaun (A4059)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Station Road, Church Village",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Brynteg Lane, Beddau",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Cardiff Road to Main Road at Cross Inn",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Llwyncelyn Road, Porth (B4278)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Upper Boat roundabout (A4054)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"A4054 Cardiff Road (northern extent), Rhydyfelin",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"A473 Nant Celyn roundabout, Church Village bypass",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"B4595 Talbot Road, Llantrisant",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"A4058 Ystrad Road, Pentre",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"B4276 Hariot Street/Llwydcoed Road, Llwydcoed (southern extent)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Cwmynysminton Road, Llwydcoed",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"A4233 East Road (in part)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Upper Boat to Midway Retail Park and Gelli Hirion Industrial Estate",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Rhondda Cynon Taf,"Gwaunmiskin Road (southern extent)",proposed_not_confirmed,https://herald.wales/south-wales/rhondda-cynon-taf/26-roads-in-rhondda-cynon-taf-could-revert-to-30mph/
+Vale of Glamorgan,"Aberthin Road (A4222) (part), Aberthin",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Maendy Road (A4222) (part), Aberthin",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4226 Port Road West, Barry (roundabout and approaches)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4266 Pontypridd Road, Barry (full length between roundabouts)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4055 Broad Street (part), Barry",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4055 Harbour Road (part), Barry",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Ffordd y Mileniwm (part), Barry",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4055 Cardiff Road (part), Barry",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4055 Gladstone Road (part), Barry",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4524 Ogmore Road (part), Ewenny",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4265 St Brides Road (part), Corntown/Ewenny area (two segments)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4524 Wick Road, Ewenny",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4524 Corntown Road (part) (two segments)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Cardiff Road/Barry Road (A4055) (part), Dinas Powys",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Fonmon Road (part), Font-y-Gary",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Port Road (part), Font-y-Gary (segments)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Leckwith Road (B4267) (part), Llandough",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Penlan Road (B4267) (part), Llandough",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Heol-y-Nant (part), Llandow",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4222 Maendy Road (part), Maendy",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Un-named Lane leading to Pen-y-Cae Farm (part), Marcross",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4524 Main Road (part), Ogmore-by-Sea",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4524 Main Road (part) / Unnamed Southerndown to Main Road",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4267 Lavernock Road (part), Penarth",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Redlands Road (B4267) (part), Penarth",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Barry Road (A4055) (part), Penarth",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Eastbrook Road (A4055), Penarth",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Eglwys Brewis Road, St Athan (two segments)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4265 Wick Road (part), St Brides Major",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A48 (part), St Nicholas",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Hayes Road Roundabout, Sully",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Sully Moors Road (part), Sully",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Hayes Road (part), Sully",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"South Road (part), Sully (two segments)",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Lavernock Road (part), Sully",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"Sully Road (part), Sully",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4265 St Brides Road (part), Wick",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"B4265 Llantwit Road (part), Wick and Broughton",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Vale of Glamorgan,"A4222 Cowbridge Road (part), Ystradowen",original_exception,https://www.valeofglamorgan.gov.uk/Documents/Our%20Council/Legal%20Notices/2023/Sealed-Order-20mph-Exceptions-2023.pdf
+Caerphilly,"Angel Way Link Road from Commercial Street, Aberbargoed to Morrisons traffic signals",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Angel Way Link Road between Aberbargoed roundabout and Britannia roundabout",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4048 Argoed",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4048 Hollybush",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A468 Newport Road, Trethomas near junction with Ridgeway",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4251 High Street from Chartist Bridge roundabout to point north of access road to St Margaret's Church",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4254 Southern Cross Valley Link (between Libanus traffic signals and Penmaen Road Roundabout)",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4049 from south of Gellihaf Road junction to point south of Fairview signals",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4049 Pengam Road from Britannia roundabout to south of Britannia Terrace",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4591 Risca Road from A467 to junction with High Street",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4251 Kendon Road from point east of Ty Brachty Terrace playground to junction with Woodview Terrace",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4251 Kendon Road from east of Main Street junction to A467",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A467 from junction with Crumlin Road to point south of fuel station",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A472 Hafodyrynys Road (two separate stretches)",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Common road between cattle grids at Pentwyn Village and Fochriw",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Coed y Brain Road from Coed-y-Brain roundabout for approximately 250 metres northerly",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A468 Newport Road and Wesley Hill, Machen",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A472 from Ystrad Mynach Roundabout to east of Gellideg Heights",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4049 from Bryn Road Roundabout to point east of new housing development",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Carn y Tyla Terrace, Abertysswg",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A469 Merchant Street between access to Capital Valley Ind Est and Heol Evan Wynne",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Fochriw Road between Brynhyfryd and Heoly-Bryn",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A472 Mafon Road west of Railway Inn to Nelson roundabout",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4049 between A469 junction and Colliers Row junction",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A4049 White Rose Way between junction with St David's Park and southern end of village",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Hendredenny Drive from St Cenydd Road to point east of Chester Court",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4591 Pontymister between Mill Street Roundabout and A467 Roundabout",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A469 New Road, Pengam between Angel Way traffic signals and north of Aldi junction in Tir y Berth",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A469 New Road, Tir y Berth from south of William Street to southern end of village",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4254 between Glyn-Gaer Road and Castle Hill, Gelligaer",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4254 Church Road, Gelligaer and Gelligaer Road",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4254 Gelligaer Road from junction with Llancaiach Fawr to county boundary",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Merthyr Road between Llechryd and the Prince of Wales public house",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4257 High Street Rhymney between Llechryd and approx 100m north of Ael y Bryn Community Centre",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Lansbury Park Distributor Road from approx 100m south-east of Bedwas Bridge Roundabout to north of junction with Pen y Cae",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Rudry Road from junction with Lansbury Park Distributor Road to east of junction with Rudry Close",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Van Road from roundabout at junction with Lansbury Park Distributor Road to junction with Cefn Carnau Lane",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4251 Ynysddu from northern end of village to northern end of Cwmfelinfach",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"B4251 Wattsville from Full Moon roundabout to North Blackvein Ind Est entrance",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Penallta Link Road from Tredomen roundabout to north of Penallta House access road",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"Northern end of Penallta Link Road and Penallta Road to Pen y Bryn Terrace",original_exception,https://caerphilly.observer/news/1024715/the-roads-that-wont-be-lowered-to-20mph-caerphilly-council-decides-on-new-limit-exemptions/
+Caerphilly,"A469 Pleasant View, Tirphil (stretch)",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"B4251 through Brynawel, between western end of Wattsville and national speed limit section west of Brynawel",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"B4254 between Penpedairheol and Gelligaer (section)",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"B4591 in Abercarn, south of Steve Williams Car Sales (stretch)",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Bryn Road, Pontllanfraith, between Penybryn Terrace and Manor Road (stretch)",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Cliff Road, Blackwood",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Duffryn Industrial Estate, Ystrad Mynach",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Glen View Terrace, Pentwyn",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Greenway, in Bedwas House Industrial Estate, Bedwas (section)",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Hawtin Park, Gelli Haf, Pontllanfraith",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Hengoed Avenue, Cefn Hengoed, between junction with A469 and northern junction with Hengoed Crescent",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"High Street, Newbridge, between junctions with Pennar Lane and Coed Duon View",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Islwyn Road, Crosskeys, between junction with B4591 and point near St John's Terrace and Newtown Industrial Estate (section)",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Ogilvie Terrace, Deri, north of junction with Bargoed Terrace",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Park View Bungalows, Penmaen, between Woodfieldside Roundabout and junction with Woodfield Park Lane",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Pentrapeod Road, Christchurch Road and Pantddu Road, Aberbeeg",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Rue de Ploubezre, Llanbradach, from Llanbradach by-pass to Wingfield traffic lights",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Trinant Road, Trinant, heading south from Wesley Terrace",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Waterloo, approaching village from A468 to point approx 90 metres north of junction with Waterloo Place",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Caerphilly,"Western Drive, Bargoed, roughly between Beech Court and Heol Y Mynydd",proposed_not_confirmed,https://herald.wales/south-wales/caerphilly/caerphilly-council-proposes-changing-20-roads-back-to-30mph/
+Bridgend,"A473 Bryntirion Hill/Park Street, Bridgend (100m west of junction with Bryngolau, east for 1,070 metres)",reverted_after_review,https://www.bridgend.gov.uk/media/mholoue5/various-roads-restoration-of-30mph-speed-limits-notice.pdf
+Bridgend,"Pencoed Way/Coychurch Road, Pencoed (157m east of junction with A473, eastwards for 675 metres)",reverted_after_review,https://www.bridgend.gov.uk/media/mholoue5/various-roads-restoration-of-30mph-speed-limits-notice.pdf
+Bridgend,"South Road, Porthcawl (from junction with Fulmer Road, south for 400 metres)",reverted_after_review,https://www.bridgend.gov.uk/media/mholoue5/various-roads-restoration-of-30mph-speed-limits-notice.pdf
+Powys,"Cefn Coch C2013",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Churchstoke A489",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Evenjobb B4357",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Forden A490",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Knighton A4113 Ludlow Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Knighton C1064 Llanshay Lane",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Knighton B4355 Penybont Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Knighton B4355 Knucklas Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Knighton B4355 Ffrydd Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Knighton B4355 Presteigne Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Llanfairpwll/Bont Dolgadfan B4518",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Llanfairpwll/Bont Dolgadfan C2018",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Llandrindod Wells A4081 Ithon Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Llangedwyn B4396",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Llangedwyn C2002",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Llansantffraid-ym-Mechain A495",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown A4811 Pool Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown U4227 Dyffryn Industrial Estate",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown U4226 Wem Dhu Lane",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown B4801 Kerry Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown U4225 Heol Vastre",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown U4216 Heol Treowen",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown C2011 Llanfair Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Newtown B4568 Milford Road",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Norton B4355 (two segments)",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Penybont Fawr B4391",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Pen-y-bont Llanerch Emrys C2003",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Powys,"Ystradgynlais B4599 Trawsfford",proposed_not_confirmed,https://en.powys.gov.uk/article/19751/Various-Roads-30mph-speed-limit-Proposal?ccp=true
+Merthyr Tydfil,"Swansea Road (top section)",proposed_not_confirmed,https://herald.wales/south-wales/merthyr-tydfil/council-considers-reverting-20mph-limits-on-key-merthyr-streets/
+Merthyr Tydfil,"Aberdare Road, Georgetown",proposed_not_confirmed,https://herald.wales/south-wales/merthyr-tydfil/council-considers-reverting-20mph-limits-on-key-merthyr-streets/
+Merthyr Tydfil,"Cyfarthfa Road",proposed_not_confirmed,https://herald.wales/south-wales/merthyr-tydfil/council-considers-reverting-20mph-limits-on-key-merthyr-streets/
+Merthyr Tydfil,"A4054 Cardiff Road, Treharris/Quakers Yard",proposed_not_confirmed,https://herald.wales/south-wales/merthyr-tydfil/council-considers-reverting-20mph-limits-on-key-merthyr-streets/
+Ceredigion,"A487 Southgate, Aberystwyth",proposed_not_confirmed,https://www.cambrian-news.co.uk/news/parts-of-a487-in-aberystwyth-and-machynlleth-set-to-go-back-to-30mph-880345
+Ceredigion,"A487 Trefechan, Aberystwyth",proposed_not_confirmed,https://www.cambrian-news.co.uk/news/parts-of-a487-in-aberystwyth-and-machynlleth-set-to-go-back-to-30mph-880345
+Ceredigion,"A487, Machynlleth",proposed_not_confirmed,https://www.cambrian-news.co.uk/news/parts-of-a487-in-aberystwyth-and-machynlleth-set-to-go-back-to-30mph-880345

@@ -1,0 +1,250 @@
+---
+title: "Wales 20mph Speed Limit: A Difference-in-Differences Evaluation"
+subtitle: "Comparing roads reduced from 30mph to 20mph against 30mph roads that were not reduced"
+format:
+  html:
+    toc: true
+    number-sections: true
+editor: visual
+execute:
+  warning: false
+  message: false
+---
+
+## Overview
+
+In September 2023, Wales became the first UK nation to make 20mph the default speed limit on restricted roads (broadly, roads that were previously 30mph in built-up areas), subject to local authorities designating exceptions that remained at 30mph. This document sets out the empirical strategy, records the outcome variables under consideration, and collects the data-download code for the project.
+
+**Identification strategy.** We restrict attention to roads *within Wales* that were 30mph immediately before the policy. Among these, the **treatment group** is roads that were reduced to 20mph in September 2023, and the **control group** is 30mph roads that were designated exceptions and kept their 30mph limit. This within-Wales, within-(previously-)30mph-road design has two advantages over a Wales-vs-England comparison: it holds fixed the national policy and macro environment (fuel prices, post-pandemic travel recovery, etc.), and it compares roads of a similar underlying character (both were judged suitable for 30mph before the reform), which should make the parallel-trends assumption more plausible than comparing, say, a Welsh residential street to an English one.
+
+The main threat to this design is that "exception" roads were not chosen at random — local authorities selected them for reasons (e.g. higher-flow arterial roads, roads with few pedestrians) that could also predict differential trends in outcomes. This should be discussed explicitly and probed with pre-trend checks, and where possible the analysis should control for road characteristics (road class, number of lanes, urban/rural, traffic volume).
+
+## Outcome variables
+
+### Primary outcome: road casualties (STATS19)
+
+The core outcome is collision and casualty counts from the police-recorded STATS19 database, which is available at the individual collision level with a `speed_limit` field, road class/number, local authority, and precise date and coordinates. This is the natural primary outcome for this design for two reasons:
+
+- It is the outcome the policy directly targets, and it is what the official Welsh Government evaluation itself uses.
+- The `speed_limit` field gives a *data-driven* way to classify roads into treatment and control without needing an external list of which roads changed: for a genuinely treated road, collisions recorded on it should show `speed_limit = 30` before September 2023 and `speed_limit = 20` after; for a genuine 30mph exception road, `speed_limit` should read 30 throughout. This is useful both as a treatment-assignment check and as a way to flag roads whose limit changed but which we mis-classified.
+
+Candidate specific measures (all constructible from STATS19, aggregated to road/local-authority-by-month or -year panels):
+
+- Total collisions, and collisions by severity (fatal, serious, slight — commonly grouped into KSI vs. slight).
+- Total casualties, and casualties by severity and by road-user type (car occupant, pedestrian, cyclist, motorcyclist) — pedestrians and cyclists are of particular interest since they are the road users a lower limit is expected to protect most.
+- The **KSI share** of casualties (KSI casualties / all casualties) as a secondary measure that nets out changes in overall traffic exposure.
+
+**Caveat:** STATS19 only records collisions reported to and recorded by the police, so under-reporting (especially of minor cyclist/pedestrian injuries) is a known issue; this is worth flagging as a limitation rather than a reason to avoid the data, since it remains the best nationally consistent source.
+
+### Mechanism / first-stage outcome: vehicle speed
+
+Speed is arguably a better-powered outcome than casualties in the short run, because collisions are rare events while speed can be measured continuously and in large volumes, and because it is the direct mechanical channel through which the policy is meant to reduce casualties. The Welsh Government's own national monitoring programme instrumented roughly 40 fixed sites with automatic traffic counters, recording mean and 85th-percentile speeds and compliance rates (% at or below 24mph); if the underlying site-level data (or aggregated figures by site/road) can be obtained (via the published monitoring reports, a data request, or freedom-of-information request to Welsh Government/Transport for Wales), it would support a much sharper first-stage/mechanism test. Where individual site data isn't available, the published route-level summary tables in the monitoring reports can still be used descriptively or as a case-study cross-check, even if they don't form a full DiD panel of the kind STATS19 supports.
+
+### Robustness/placebo outcome: traffic volume
+
+Annual Average Daily Flow (AADF) and raw traffic counts (from DfT's road traffic statistics count points) let us check for two things: (i) whether traffic *displaced* from newly-20mph roads onto nearby roads that stayed 30mph (which would contaminate the control group and bias estimates toward zero), and (ii) whether changes in casualties are being driven by changes in exposure (fewer/more vehicle-km driven) rather than by the speed limit itself. This is not really an "outcome of interest" in its own right for this design, but an important robustness/placebo check, since count points can in principle be matched to specific roads.
+
+### Outcomes considered but not well suited to this narrower design
+
+Air quality, active travel counts, bus punctuality, and hospital admissions were discussed as candidate outcomes for a broader Wales-vs-England comparison, but for a *road-level* 20-vs-30 design within Wales they are less useful: air quality and active-travel count data exist only at a small number of fixed monitoring sites, not densely enough to reliably separate treated from control roads, and bus punctuality / hospital admissions data are generally reported at local-authority or health-board level rather than by road or road segment. These remain worth revisiting if the design is later extended to a coarser (e.g. local-authority-level) comparison.
+
+### Defining the control group of "exception" roads
+
+Welsh Government publishes a GIS layer on DataMapWales, ["Roads affected by changes to the speed limit on restricted roads"](https://datamap.gov.wales/maps/roads-affected-by-changes-to-the-speed-limit-on-restricted-roads/), intended to consolidate submissions from all Welsh highway authorities on which roads became 20mph and which stayed 30mph as exceptions. This would have been administrative ground truth for the treatment/control split, avoiding the selection bias involved in trying to infer treatment status from the accident record itself (see note below) — but as documented under "Data access" below, this specific map turned out to be broken, so the control-road list here is instead compiled directly from local authority sources.
+
+**Why not infer treatment status from STATS19 accident patterns?** In principle a road that switched from 30mph to 20mph should show `speed_limit = 30` for its pre-policy collisions and `speed_limit = 20` for its post-policy ones. But *finding* treated roads this way means selecting only roads that had at least one recorded collision in both the pre- and post-period. That conditions the sample on the outcome: roads where the policy worked well enough to eliminate accidents post-policy would never appear (there is no post-period record to reveal the new limit), and the surviving sample is skewed toward busier, higher-risk roads simply because they are more likely to have a collision in any given window — a very different population from "all roads that were reduced to 20mph." STATS19's road identifiers (road class/number + local authority, with no persistent segment ID) are also too coarse to reliably pin down which stretch of a road changed, since Traffic Regulation Orders apply to specific sections rather than whole numbered roads. We therefore use the `speed_limit` switch only as a **validation check** — flagging roads whose STATS19 collision record is inconsistent with their compiled classification — not as the primary way of assigning treatment status.
+
+**Data access — outcome of investigation.** The DataMapWales map itself reports "This map does not currently use any layers," and the layer names visible in its stored configuration (`geonode:national_30mph_existing`, `geonode:national_30mph_order`, `geonode:national_20mph_exception_order`) turned out not to exist in the live WFS catalog (`Feature type ... unknown`) — consistent with the map's own layer setup being broken or orphaned. Querying the underlying GeoServer's real WFS catalog directly turned up a similarly-named `geonode:_30mph_roads_in_wales` layer, but it contains only polygon geometry with `uuid`/`id` columns and no speed-limit or road-identifying attributes — almost certainly a cartographic boundary/mask layer rather than the road-level dataset we want. In short: **the WFS route is currently a dead end** for this specific dataset, most likely because the published map is broken on the Welsh Government's end rather than because of anything wrong with the query syntax.
+
+Two ways to resurrect this route, not yet pursued: (i) search the DataMapWales catalog for the underlying *layer* (rather than the *map*) — GeoNode-style portals often have a separate layer detail page with a working native "Download" button (Shapefile/GeoJSON/CSV) even when the map composed from it is broken; (ii) email the contact on the layer's metadata page (`data@gov.wales`) flagging that the published map has no working layers and asking for a current download link.
+
+**Control-road list: compiled from local authority sources.** Since the DataMapWales route didn't pan out, the exception/reverted-road list was built directly by working through each Welsh local authority's own published sources (council pages, local press coverage of council decisions). It currently covers 16 of the 22 Welsh local authorities (414 roads total): Newport (85), Caerphilly (61), Wrexham (48), Vale of Glamorgan (39), Torfaen (36), Powys (28), Rhondda Cynon Taf (26), Isle of Anglesey (24), Conwy (19), Swansea (17), Flintshire (14), Merthyr Tydfil (4), Cardiff (4), Bridgend (3), Ceredigion (3), Gwynedd (3). Six authorities have no rows, for two different reasons: Denbighshire, Neath Port Talbot, Monmouthshire and Blaenau Gwent confirmed they made no (or no *named*) changes — a real finding, not a data gap — while Pembrokeshire's and Carmarthenshire's lists exist but weren't extractable from any accessible source (Pembrokeshire's is only on the broken DataMapWales map or in person at County Hall; Carmarthenshire's review PDF returned a 403 error).
+
+Each row carries a `status`: `original_exception` (30mph by Order from the start), `reverted_after_review` (set to 20mph initially, then reverted following the Welsh Government's 2024 review), `proposed_not_confirmed` (still under consultation — not yet a real exception; exclude from the core treatment/control assignment, or at most treat as a sensitivity check), or `unclear`. Some important caveats: Cardiff's and Swansea's *original* (day-one) exception lists were never published as text, only as an unlabelled interactive map, so what's captured for them here is only their much smaller 2025 proposed-reversion lists — a real gap for two of the highest-power authorities that's worth closing before finalising the estimation sample. Gwynedd similarly has roughly 85 original exceptions that were never individually named in any source found; only 3 roads under a later review made it in. Several entries (Vale of Glamorgan, Newport, Caerphilly, Wrexham, Cardiff, Carmarthenshire) were extracted from PDFs via AI summarisation rather than verbatim copy, so road descriptions (distances, junction names) should be treated as approximate and spot-checked against `source_url` before being used for anything requiring precise geocoding. @sec-data-treatment below loads this compiled file (`data/wales_30mph_exceptions.csv`).
+
+## Data download {#sec-data-download}
+
+The code chunks below are set to `eval: false` by default since they download large files; run them once interactively (or flip `eval: true`) to populate a local `data/` folder.
+
+```{r}
+#| label: setup
+#| eval: true
+
+library(tidyverse)
+library(stats19)
+library(janitor)
+
+dir.create("data", showWarnings = FALSE)
+dir.create("data/raw", showWarnings = FALSE)
+
+# The four Welsh police forces -- used to subset STATS19 (which has no
+# single "country" field) to collisions recorded in Wales.
+welsh_police_forces <- c("North Wales", "Gwent", "South Wales", "Dyfed-Powys")
+
+# Study window: enough pre-period for parallel-trends checks, and the
+# post-period since the September 2023 policy change.
+study_years <- 2017:2025
+policy_date <- as.Date("2023-09-17")
+```
+
+### STATS19 collisions, casualties and vehicles
+
+```{r}
+#| label: download-stats19
+#| eval: false
+
+# Downloads + caches raw STATS19 files for each year, then reads and
+# formats (numeric codes -> labels) in one step. This will download
+# collision, casualty and vehicle tables for every year in study_years.
+collisions_raw <- map_dfr(study_years, function(yr) {
+  get_stats19(year = yr, type = "collision", format = TRUE)
+})
+
+casualties_raw <- map_dfr(study_years, function(yr) {
+  get_stats19(year = yr, type = "casualty", format = TRUE)
+})
+
+vehicles_raw <- map_dfr(study_years, function(yr) {
+  get_stats19(year = yr, type = "vehicle", format = TRUE)
+})
+
+write_rds(collisions_raw, "data/raw/stats19_collisions_gb.rds")
+write_rds(casualties_raw, "data/raw/stats19_casualties_gb.rds")
+write_rds(vehicles_raw,   "data/raw/stats19_vehicles_gb.rds")
+```
+
+```{r}
+#| label: filter-stats19-wales
+#| eval: false
+
+collisions_raw <- read_rds("data/raw/stats19_collisions_gb.rds") |> clean_names()
+
+# Restrict to Wales (via police force) and to roads that were 20mph or
+# 30mph at the time of the collision -- our treatment/control universe.
+collisions_wales <- collisions_raw |>
+  filter(police_force %in% welsh_police_forces) |>
+  filter(speed_limit %in% c(20, 30)) |>
+  mutate(
+    period = if_else(date < policy_date, "pre", "post"),
+    road_id = paste(local_authority_district, first_road_class, first_road_number, sep = "_")
+  )
+
+write_rds(collisions_wales, "data/stats19_collisions_wales_20_30.rds")
+
+casualties_raw <- read_rds("data/raw/stats19_casualties_gb.rds") |> clean_names()
+casualties_wales <- casualties_raw |>
+  semi_join(collisions_wales, by = "accident_index")
+
+write_rds(casualties_wales, "data/stats19_casualties_wales_20_30.rds")
+```
+
+The data from the above two chuncks are saved in "accdata.RData" and can be loaded with this line.
+
+```{r}
+#| label: load accident data
+#| eval: false
+
+load("accdata.RData")
+```
+
+### DfT traffic counts (volume / displacement check)
+
+```{r}
+#| label: download-dft-traffic
+#| eval: false
+
+# DfT road traffic statistics -- count-point level Annual Average Daily
+# Flow (AADF). Smaller and more tractable than the full raw-counts file
+# (which has ~5m rows for all of GB back to 2000).
+aadf_zip <- "data/raw/dft_traffic_counts_aadf.zip"
+download.file(
+  "https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_aadf.zip",
+  destfile = aadf_zip, mode = "wb"
+)
+unzip(aadf_zip, exdir = "data/raw")
+
+aadf_gb <- read_csv("data/raw/dft_traffic_counts_aadf.csv") |> clean_names()
+
+welsh_local_authorities <- c(
+  "Isle of Anglesey", "Gwynedd", "Conwy", "Denbighshire", "Flintshire",
+  "Wrexham", "Powys", "Ceredigion", "Pembrokeshire", "Carmarthenshire",
+  "Swansea", "Neath Port Talbot", "Bridgend", "Vale of Glamorgan",
+  "Rhondda Cynon Taf", "Merthyr Tydfil", "Caerphilly", "Blaenau Gwent",
+  "Torfaen", "Monmouthshire", "Newport", "Cardiff"
+)
+
+aadf_wales <- aadf_gb |> filter(local_authority_name %in% welsh_local_authorities)
+write_rds(aadf_wales, "data/dft_aadf_wales.rds")
+
+# For displacement checks, raw (non-annualised) counts by count point are
+# available from the larger file below if finer time resolution is needed:
+# https://storage.googleapis.com/dft-statistics/road-traffic/downloads/data-gov-uk/dft_traffic_counts_raw_counts.zip
+```
+
+### Treatment/control road list (30mph exceptions) {#sec-data-treatment}
+
+```{r}
+#| label: datamapwales-attempt-blocked
+#| eval: false
+
+# BLOCKED -- kept for reference / to retry if Welsh Government fixes the
+# published map or responds to a data request. Investigation summary:
+#   1. The map page itself reports "This map does not currently use any
+#      layers", and its stored layer names (geonode:national_30mph_existing,
+#      geonode:national_30mph_order, geonode:national_20mph_exception_order)
+#      do not exist in the live WFS catalog:
+library(sf)
+
+bad_url <- paste0(
+  "https://datamap.gov.wales/geoserver/wfs?service=WFS&version=2.0.0",
+  "&request=GetFeature&typeNames=geonode:national_30mph_order",
+  "&outputFormat=application/json"
+)
+# -> ows:Exception: "Feature type geonode:national_30mph_order unknown"
+
+#   2. The real WFS catalog does contain geonode:_30mph_roads_in_wales,
+#      but it turns out to be a boundary/mask polygon layer with no useful
+#      attributes (just uuid/id, no speed-limit or road identifiers):
+similar_url <- paste0(
+  "https://datamap.gov.wales/geoserver/wfs?service=WFS&version=2.0.0",
+  "&request=GetFeature&typeNames=geonode:_30mph_roads_in_wales",
+  "&outputFormat=application/json"
+)
+# roads_30mph <- read_sf(similar_url)   # 1,273 rows, cols: uuid, id, geometry -- not usable
+
+# Next steps if revisiting: (a) search the DataMapWales catalog for this
+# dataset's standalone *layer* page (distinct from the broken *map* page)
+# for a native Download button; (b) email data@gov.wales flagging the
+# broken map and asking for a current download link.
+```
+
+```{r}
+#| label: exceptions-compiled
+#| eval: true
+
+# Compiled 30mph-exception / 20mph-reverted-to-30mph road list, built by
+# working through each Welsh local authority's own published sources
+# (council pages, local press) since the DataMapWales GIS route above
+# didn't pan out. Covers 16 of the 22 Welsh local authorities (414 rows).
+# See the coverage/caveats discussion in the prose above and in the
+# project notes for which authorities are missing and why -- in
+# particular, Cardiff and Swansea's *original* exception lists are not
+# yet captured (only their much smaller 2025 proposed-reversion lists
+# are), which matters for two of the highest-power authorities.
+#
+# status values:
+#   original_exception     -- 30mph by Order from the start
+#   reverted_after_review  -- set to 20mph initially, then reverted to
+#                              30mph following the 2024 review
+#   proposed_not_confirmed -- under consultation, not yet a real
+#                              exception -- exclude from the core
+#                              treatment/control assignment, or treat as
+#                              a separate sensitivity check
+#   unclear                -- source didn't specify
+
+exceptions_compiled <- read_csv("data/wales_30mph_exceptions.csv")
+
+exceptions_compiled |> count(local_authority, status) |> print(n = Inf)
+
+write_rds(exceptions_compiled, "data/wales_30mph_exceptions.rds")
+```
