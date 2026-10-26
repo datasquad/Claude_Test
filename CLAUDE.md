@@ -24,7 +24,7 @@ R + Quarto analysis of the Welsh default 20mph speed limit (policy date `2023-09
 
 ## Git and data
 
-- Keep data out of git: never commit `data/raw/`, `.RData`, `.rds` or `.zip` files. These files were committed in the initial commit before `.gitignore` covered them, so they are still tracked. Don't run `git rm --cached` or rewrite history unless the user asks.
+- Keep data out of git: never commit `data/raw/`, `.RData`, `.rds` or `.zip` files. They are untracked and gitignored now, but they are still in the initial commit's history, so `.git` is about 339 MB and pushing to GitHub would fail. Don't rewrite history unless the user asks.
 - No remote is configured.
 
 ## Editing gotcha
