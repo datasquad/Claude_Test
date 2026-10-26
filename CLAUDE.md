@@ -28,4 +28,4 @@ R + Quarto analysis of the Welsh default 20mph speed limit (policy date `2023-09
 
 ## Editing gotcha
 
-The user keeps `WalesSpeedLimit.qmd` open in RStudio, and saving there can overwrite Claude's edits with a stale buffer. After editing a file that may be open in RStudio, remind the user to use File > Reload before saving.
+The user keeps `WalesSpeedLimit.qmd` open in RStudio, and saving there can overwrite Claude's edits with a stale buffer. After editing a file that may be open in RStudio, remind the user to close the tab without saving and reopen the file (RStudio has no File > Reload; it only reloads automatically when the open copy has no unsaved changes).
