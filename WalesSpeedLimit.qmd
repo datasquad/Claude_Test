@@ -58,9 +58,26 @@ Welsh Government publishes a GIS layer on DataMapWales, ["Roads affected by chan
 
 Two ways to resurrect this route, not yet pursued: (i) search the DataMapWales catalog for the underlying *layer* (rather than the *map*) — GeoNode-style portals often have a separate layer detail page with a working native "Download" button (Shapefile/GeoJSON/CSV) even when the map composed from it is broken; (ii) email the contact on the layer's metadata page (`data@gov.wales`) flagging that the published map has no working layers and asking for a current download link.
 
-**Control-road list: compiled from local authority sources.** Since the DataMapWales route didn't pan out, the exception/reverted-road list was built directly by working through each Welsh local authority's own published sources (council pages, local press coverage of council decisions). It currently covers 16 of the 22 Welsh local authorities (414 roads total): Newport (85), Caerphilly (61), Wrexham (48), Vale of Glamorgan (39), Torfaen (36), Powys (28), Rhondda Cynon Taf (26), Isle of Anglesey (24), Conwy (19), Swansea (17), Flintshire (14), Merthyr Tydfil (4), Cardiff (4), Bridgend (3), Ceredigion (3), Gwynedd (3). Six authorities have no rows, for two different reasons: Denbighshire, Neath Port Talbot, Monmouthshire and Blaenau Gwent confirmed they made no (or no *named*) changes — a real finding, not a data gap — while Pembrokeshire's and Carmarthenshire's lists exist but weren't extractable from any accessible source (Pembrokeshire's is only on the broken DataMapWales map or in person at County Hall; Carmarthenshire's review PDF returned a 403 error).
+**Control-road list: compiled from local authority sources.** Since the DataMapWales route didn't pan out, the exception/reverted-road list was built directly by working through each Welsh local authority's own published sources (council pages, local press coverage of council decisions). It currently covers 16 of the 22 Welsh local authorities (430 roads or sections total): Newport (88), Caerphilly (61), Vale of Glamorgan (52), Wrexham (48), Torfaen (36), Powys (29), Rhondda Cynon Taf (26), Isle of Anglesey (24), Conwy (19), Swansea (17), Flintshire (14), Merthyr Tydfil (4), Cardiff (4), Bridgend (3), Gwynedd (3), Ceredigion (2). Six authorities have no rows, for two different reasons: Denbighshire, Neath Port Talbot, Monmouthshire and Blaenau Gwent confirmed they made no (or no *named*) changes — a real finding, not a data gap — while Pembrokeshire's and Carmarthenshire's lists exist but weren't extractable from any accessible source (Pembrokeshire's is only on the broken DataMapWales map or in person at County Hall; Carmarthenshire's review PDF returned a 403 error).
 
-Each row carries a `status`: `original_exception` (30mph by Order from the start), `reverted_after_review` (set to 20mph initially, then reverted following the Welsh Government's 2024 review), `proposed_not_confirmed` (still under consultation — not yet a real exception; exclude from the core treatment/control assignment, or at most treat as a sensitivity check), or `unclear`. Some important caveats: Cardiff's and Swansea's *original* (day-one) exception lists were never published as text, only as an unlabelled interactive map, so what's captured for them here is only their much smaller 2025 proposed-reversion lists — a real gap for two of the highest-power authorities that's worth closing before finalising the estimation sample. Gwynedd similarly has roughly 85 original exceptions that were never individually named in any source found; only 3 roads under a later review made it in. Several entries (Vale of Glamorgan, Newport, Caerphilly, Wrexham, Cardiff, Carmarthenshire) were extracted from PDFs via AI summarisation rather than verbatim copy, so road descriptions (distances, junction names) should be treated as approximate and spot-checked against `source_url` before being used for anything requiring precise geocoding. @sec-data-treatment below loads this compiled file (`data/wales_30mph_exceptions.csv`).
+Each row carries a `status`: `original_exception` (30mph by Order from the start), `reverted_after_review` (set to 20mph initially, then reverted following the Welsh Government's 2024 review), `proposed_not_confirmed` (still under consultation — not yet a real exception; exclude from the core treatment/control assignment, or at most treat as a sensitivity check), or `unclear`. Some important caveats: Cardiff's and Swansea's *original* (day-one) exception lists were never published as text, only as an unlabelled interactive map, so what's captured for them here is only their much smaller 2025 proposed-reversion lists — a real gap for two of the highest-power authorities that's worth closing before finalising the estimation sample. Gwynedd similarly has roughly 85 original exceptions that were never individually named in any source found; only 3 roads under a later review made it in. `road_name` was compiled via AI summarisation and often shortens the source, so the section each row covers is recorded separately in `extent_text`, copied verbatim from `source_url` (several sections joined by " | "). For Powys the text comes from the draft Order linked from the source page, and for the Vale of Glamorgan from the scanned sealed Order, with its OCR errors corrected. `extent_detail` grades how well the source pins the section down: `precise` (start and end fixed by junctions or measured distances, as in a Traffic Regulation Order), `whole_road`, `approximate` (from/to landmarks without measured points), `vague` (e.g. "in part", "north of the school") or `none` (the source names the road only). `extent_note` records caveats, e.g. that Torfaen's source page is now offline, so its extents could not be re-checked. @sec-data-treatment below loads this compiled file (`data/wales_30mph_exceptions.csv`).
+
+### Allocating collisions to exception road segments {#sec-allocation}
+
+Traffic Regulation Orders, and the council lists derived from them, usually exempt a *section* of a road rather than the whole road -- e.g. Newport's "New Road, from its junction with Caerleon Road for a distance of 280 metres". The rest of New Road went to 20mph, so a collision on New Road is a control observation only if it happened on those 280 metres. `road_name` often records only the road (Newport's entry is just "New Road"), so the section comes from `extent_text`. Of the 430 rows, 157 have a `precise` extent and 47 cover the `whole_road`; these can be geocoded as they stand. 90 are `approximate` and need landmarks located by hand. The remaining 136 are `vague` or `none`, mostly press-reported reversion lists (Wrexham, Anglesey, Flintshire, Conwy, Rhondda Cynon Taf); their legal extents are in the councils' Traffic Regulation Orders, which would need to be obtained separately (@sec-data-treatment counts `extent_detail` by authority).
+
+STATS19 cannot do the allocation by itself either. It records no street names, only road class and number, so a named road cannot be matched to it. About half of Welsh 20/30mph collisions (8,616 of 17,538 in 2017--2025) are on unclassified roads, which carry no road number at all, so the `road_id` built in `filter-stats19-wales` lumps every unclassified road in an authority together. Even for numbered roads it cannot tell an exempted section from the rest of the road.
+
+Allocation is therefore **spatial**, using the collision coordinates that STATS19 does record (OS grid easting/northing; only 14 of the 17,538 are missing):
+
+1.  **One row per segment.** Re-extract the extent of every exception verbatim from `source_url` into a segment table, `data/wales_30mph_exception_segments.csv`: one row per section (so "Caerleon Road (two sections)" becomes two rows), with the road name, road number, the verbatim extent text, and its structured parts -- `from_road` (the junction the section starts at), and either `to_road` (where it ends) or `length_m` plus `direction` (north/south/east/west). Rows with no section stated are recorded as whole-road exceptions only if the source says so.
+2.  **Segment geometry.** Cut each segment out of the OS Open Roads network (free, OGL, with road names and numbers on every link): find the named road within the authority, locate its junction with `from_road`, and cut to the junction with `to_road` or to `length_m` along the road. Where this is ambiguous -- the road branches, the junction appears more than once, or the direction of "for 280 metres" isn't stated and both directions fit -- the segment is flagged for digitising by hand (e.g. in QGIS) rather than guessed. Each segment carries a `geocode_status`.
+3.  **Collision allocation.** A collision is allocated to an exception segment if it lies within 20m of the segment *and* its nearest road link is the exception road itself. The second condition stops collisions on side roads at a junction with the segment being counted as control; STATS19 reports the speed limit of the road the collision was on, so a side-road collision belongs to the 20mph side road. Collisions not allocated to any segment are treated (reduced to 20mph).
+4.  **Where the list is incomplete, treatment status is unknown, not "treated".** Collisions in authorities whose exception list is missing or incomplete (Pembrokeshire, Carmarthenshire, Gwynedd, and the original lists for Cardiff and Swansea) are excluded rather than counted as treated, as are collisions on an exception road whose segment could not yet be geocoded. Denbighshire, Neath Port Talbot, Monmouthshire and Blaenau Gwent made no changes, so all their roads are treated.
+
+Two checks come out of this. First, the STATS19 `speed_limit` field validates the allocation, as discussed above: after the policy date, collisions allocated to exception segments should be recorded at 30mph and the rest at 20mph, and a segment with many mismatches points to a geocoding error. Second, collisions close to a segment's ends are the least certain, so the estimates should be re-run excluding collisions within 30m of a segment end and with a narrower and wider allocation buffer.
+
+Roads with status `reverted_after_review` were treated in September 2023 and returned to 30mph later, so they are kept as a separate group rather than pooled with the controls.
 
 ## Data download {#sec-data-download}
 
@@ -126,6 +143,9 @@ collisions_wales <- collisions_raw |>
   filter(speed_limit %in% c(20, 30)) |>
   mutate(
     period = if_else(date < policy_date, "pre", "post"),
+    # Coarse road identifier for descriptives only: unclassified roads have
+    # no road number, and a numbered road can be only partly exempt, so
+    # treatment/control is allocated spatially instead (@sec-allocation).
     road_id = paste(local_authority_district, first_road_class, first_road_number, sep = "_")
   )
 
@@ -133,12 +153,12 @@ write_rds(collisions_wales, "data/stats19_collisions_wales_20_30.rds")
 
 casualties_raw <- read_rds("data/raw/stats19_casualties_gb.rds") |> clean_names()
 casualties_wales <- casualties_raw |>
-  semi_join(collisions_wales, by = "accident_index")
+  semi_join(collisions_wales, by = "collision_index")
 
 write_rds(casualties_wales, "data/stats19_casualties_wales_20_30.rds")
 ```
 
-The data from the above two chuncks are saved in "accdata.RData" and can be loaded with this line.
+The GB-wide tables from `download-stats19` (`collisions_raw`, `casualties_raw`, `vehicles_raw`) are saved in "accdata.RData" and can be loaded with this line.
 
 ```{r}
 #| label: load accident data
@@ -151,7 +171,7 @@ load("accdata.RData")
 
 ```{r}
 #| label: download-dft-traffic
-#| eval: false
+#| eval: true
 
 # DfT road traffic statistics -- count-point level Annual Average Daily
 # Flow (AADF). Smaller and more tractable than the full raw-counts file
@@ -225,7 +245,7 @@ similar_url <- paste0(
 # Compiled 30mph-exception / 20mph-reverted-to-30mph road list, built by
 # working through each Welsh local authority's own published sources
 # (council pages, local press) since the DataMapWales GIS route above
-# didn't pan out. Covers 16 of the 22 Welsh local authorities (414 rows).
+# didn't pan out. Covers 16 of the 22 Welsh local authorities (430 rows).
 # See the coverage/caveats discussion in the prose above and in the
 # project notes for which authorities are missing and why -- in
 # particular, Cardiff and Swansea's *original* exception lists are not
@@ -242,9 +262,270 @@ similar_url <- paste0(
 #                              a separate sensitivity check
 #   unclear                -- source didn't specify
 
-exceptions_compiled <- read_csv("data/wales_30mph_exceptions.csv")
+exceptions_compiled <- read_csv("data/wales_30mph_exceptions.csv") |>
+  mutate(
+    # Split "A4051 Malpas Road" / "Coast Road B4239 (multiple sections)"
+    # into road number and road name.
+    road_number = str_extract(road_name, "\\b[ABM]\\d{1,4}\\b"),
+    road_base   = road_name |>
+      str_remove("\\s*[\\(,].*$") |>
+      str_remove("\\b[ABM]\\d{1,4}\\b") |>
+      str_squish() |>
+      na_if("")
+  )
 
 exceptions_compiled |> count(local_authority, status) |> print(n = Inf)
 
+# extent_text is the source's own wording; extent_detail grades it. Only
+# "precise" and "whole_road" rows can be geocoded as they stand
+# (@sec-allocation).
+exceptions_compiled |>
+  count(local_authority, extent_detail) |>
+  pivot_wider(names_from = extent_detail, values_from = n, values_fill = 0) |>
+  print(n = Inf)
+
 write_rds(exceptions_compiled, "data/wales_30mph_exceptions.rds")
+```
+
+### Exception road segments and collision allocation {#sec-data-segments}
+
+These chunks implement the allocation described in @sec-allocation. The first writes a template for the segment table, with one row per compiled exception and the extent text pre-filled where it was recorded. It is completed by hand from `source_url` -- splitting multi-section rows, and filling `from_road`, `to_road`, `length_m` and `direction` -- and saved as `data/wales_30mph_exception_segments.csv`.
+
+```{r}
+#| label: exception-segments-template
+#| eval: false
+
+segments_template <- exceptions_compiled |>
+  transmute(
+    segment_id = row_number(),
+    local_authority, road_name, road_number, road_base, extent_text, extent_detail,
+    from_road = NA_character_,   # junction the exempt section starts at
+    to_road   = NA_character_,   # junction it ends at, or ...
+    length_m  = NA_real_,        # ... its length from from_road
+    direction = NA_character_,   # north/south/east/west, if stated
+    status, source_url
+  )
+
+# Never overwrite the hand-completed version.
+if (!file.exists("data/wales_30mph_exception_segments_template.csv")) {
+  write_csv(segments_template, "data/wales_30mph_exception_segments_template.csv")
+}
+```
+
+The road network is OS Open Roads (GeoPackage, about 1GB unzipped for GB). Local authority boundaries are needed to find each road within its authority; download "Local Authority Districts (May 2024) Boundaries UK BFC" as a GeoPackage from the ONS Open Geography Portal (<https://geoportal.statistics.gov.uk>) to `data/raw/lad_boundaries.gpkg`.
+
+```{r}
+#| label: download-os-open-roads
+#| eval: false
+
+library(sf)
+
+oproad_zip <- "data/raw/oproad_gpkg_gb.zip"
+download.file(
+  "https://api.os.uk/downloads/v1/products/OpenRoads/downloads?area=GB&format=GeoPackage&redirect",
+  destfile = oproad_zip, mode = "wb"
+)
+unzip(oproad_zip, exdir = "data/raw/oproad")
+```
+
+```{r}
+#| label: build-exception-segments
+#| eval: false
+
+library(sf)
+
+# Field names below (lad24nm, name_1, road_classification_number) are
+# those after clean_names() -- check them against the downloaded files.
+la_boundaries <- read_sf("data/raw/lad_boundaries.gpkg") |>
+  clean_names() |>
+  filter(lad24nm %in% welsh_local_authorities) |>
+  st_transform(27700)
+
+oproad_gpkg <- list.files("data/raw/oproad", pattern = "\\.gpkg$",
+                          recursive = TRUE, full.names = TRUE)
+links_wales <- read_sf(
+  oproad_gpkg, layer = "road_link",
+  wkt_filter = st_as_text(st_as_sfc(st_bbox(la_boundaries)))
+) |>
+  clean_names()
+
+# Cuts one exception segment out of its road. Returns the geometry (empty
+# if it could not be cut) and a geocode_status: "auto_*" when the cut is
+# unambiguous, "manual_*" / "road_not_found" when it must be digitised by
+# hand -- never a guess.
+build_segment <- function(seg, links) {
+  out <- function(geom, status) {
+    tibble(
+      segment_id = seg$segment_id,
+      geocode_status = status,
+      geometry = st_sfc(if (is.null(geom)) st_linestring() else geom, crs = st_crs(links))
+    )
+  }
+
+  road <- if (!is.na(seg$road_base)) {
+    links |> filter(name_1 == seg$road_base)
+  } else {
+    links |> filter(road_classification_number == seg$road_number)
+  }
+  if (nrow(road) == 0) return(out(NULL, "road_not_found"))
+
+  line <- road |> st_union() |> st_cast("MULTILINESTRING") |> st_line_merge()
+  if (is.na(seg$from_road)) return(out(line[[1]], "auto_whole_road"))
+  if (st_geometry_type(line) != "LINESTRING") return(out(NULL, "manual_road_branches"))
+  road_length <- as.numeric(st_length(line))
+
+  # Distance along the road at which it meets the named cross road (NA if
+  # they don't meet, or meet more than once).
+  junction_at <- function(cross_name) {
+    cross <- links |> filter(name_1 == cross_name) |> st_union()
+    if (length(cross) == 0 || st_is_empty(cross)) return(NA_real_)
+    pts <- st_intersection(line, cross)
+    if (length(pts) == 0 || st_is_empty(pts)) return(NA_real_)
+    pts <- st_cast(pts, "POINT")
+    if (length(pts) != 1) return(NA_real_)
+    st_line_project(line, pts, normalized = FALSE)
+  }
+
+  from_m <- junction_at(seg$from_road)
+  if (is.na(from_m)) return(out(NULL, "manual_from_junction"))
+
+  if (!is.na(seg$to_road)) {
+    to_m <- junction_at(seg$to_road)
+    if (is.na(to_m)) return(out(NULL, "manual_to_junction"))
+  } else if (!is.na(seg$length_m)) {
+    # "For a distance of 280 metres": keep the cut only if exactly one
+    # direction fits on the road, or the stated compass direction picks one.
+    fits <- c(from_m + seg$length_m, from_m - seg$length_m)
+    fits <- fits[fits >= 0 & fits <= road_length]
+    if (length(fits) == 2 && !is.na(seg$direction)) {
+      start <- st_coordinates(st_line_interpolate(line, from_m))
+      cands <- st_coordinates(st_line_interpolate(line, fits))
+      shift <- switch(seg$direction,
+        north = cands[, "Y"] - start[, "Y"], south = start[, "Y"] - cands[, "Y"],
+        east  = cands[, "X"] - start[, "X"], west  = start[, "X"] - cands[, "X"]
+      )
+      fits <- fits[shift > 0]
+    }
+    if (length(fits) != 1) return(out(NULL, "manual_direction"))
+    to_m <- fits
+  } else {
+    return(out(NULL, "manual_extent"))
+  }
+
+  cut_at <- sort(c(from_m, to_m)) / road_length
+  out(lwgeom::st_linesubstring(line, cut_at[1], cut_at[2])[[1]], "auto_segment")
+}
+
+segments_tbl <- read_csv("data/wales_30mph_exception_segments.csv")
+
+segment_geoms <- segments_tbl |>
+  group_split(local_authority) |>
+  map(\(la_segs) {
+    la <- filter(la_boundaries, lad24nm == la_segs$local_authority[1])
+    la_links <- links_wales[lengths(st_intersects(links_wales, la)) > 0, ]
+    map(seq_len(nrow(la_segs)), \(i) build_segment(la_segs[i, ], la_links)) |> list_rbind()
+  }) |>
+  list_rbind()
+
+exception_segments <- segments_tbl |>
+  left_join(segment_geoms, by = "segment_id") |>
+  st_as_sf()
+
+# Segments that need digitising by hand: fix them in the GeoPackage (e.g.
+# in QGIS) and set geocode_status to "manual_done".
+exception_segments |> st_drop_geometry() |> count(local_authority, geocode_status) |> print(n = Inf)
+
+if (!file.exists("data/wales_30mph_exception_segments.gpkg")) {
+  st_write(exception_segments, "data/wales_30mph_exception_segments.gpkg")
+}
+```
+
+```{r}
+#| label: allocate-collisions
+#| eval: false
+
+library(sf)
+
+exception_segments <- read_sf("data/wales_30mph_exception_segments.gpkg")
+collisions_wales <- read_rds("data/stats19_collisions_wales_20_30.rds")
+
+# Authorities whose exception list is missing or incomplete: treatment
+# status is unknown there, so their collisions are excluded (@sec-allocation).
+la_list_incomplete <- c("Pembrokeshire", "Carmarthenshire", "Gwynedd", "Cardiff", "Swansea")
+
+allocation_buffer_m <- 20   # collision-to-segment distance
+segment_end_buffer_m <- 30  # flags collisions near a segment boundary
+
+collisions_sf <- collisions_wales |>
+  filter(!is.na(location_easting_osgr)) |>
+  mutate(local_authority = recode(local_authority_highway,
+    "Rhondda, Cynon, Taff" = "Rhondda Cynon Taf",
+    "The Vale of Glamorgan" = "Vale of Glamorgan"
+  )) |>
+  st_as_sf(coords = c("location_easting_osgr", "location_northing_osgr"),
+           crs = 27700, remove = FALSE)
+
+# The road each collision happened on = its nearest OS Open Roads link.
+nearest <- st_nearest_feature(collisions_sf, links_wales)
+collisions_sf <- collisions_sf |>
+  mutate(
+    nearest_road        = links_wales$name_1[nearest],
+    nearest_road_number = links_wales$road_classification_number[nearest],
+    snap_dist_m = as.numeric(st_distance(st_geometry(collisions_sf),
+                                         st_geometry(links_wales)[nearest],
+                                         by_element = TRUE))
+  )
+
+geocoded <- exception_segments |> filter(!st_is_empty(geom))
+same_road <- function(name_a, number_a, name_b, number_b) {
+  coalesce(name_a == name_b, FALSE) | coalesce(number_a == number_b, FALSE)
+}
+
+# A collision is on a segment if it is within the buffer AND its nearest
+# link is the exception road itself -- not a side road at the junction.
+near_segment <- st_is_within_distance(collisions_sf, geocoded, dist = allocation_buffer_m)
+segment_idx <- map_int(seq_along(near_segment), \(i) {
+  j <- near_segment[[i]]
+  j <- j[same_road(geocoded$road_base[j], geocoded$road_number[j],
+                   collisions_sf$nearest_road[i], collisions_sf$nearest_road_number[i])]
+  if (length(j) == 0) NA_integer_ else j[1]
+})
+
+segment_ends <- c(lwgeom::st_startpoint(st_geometry(geocoded)),
+                  lwgeom::st_endpoint(st_geometry(geocoded)))
+
+# Exception roads not yet geocoded: a collision on one cannot be allocated.
+ungeocoded_keys <- exception_segments |>
+  st_drop_geometry() |>
+  filter(st_is_empty(exception_segments$geom), !is.na(road_base)) |>
+  with(paste(local_authority, road_base))
+
+collisions_allocated <- collisions_sf |>
+  mutate(
+    segment_id     = geocoded$segment_id[segment_idx],
+    segment_status = geocoded$status[segment_idx],
+    near_segment_end = lengths(st_is_within_distance(collisions_sf, segment_ends,
+                                                     dist = segment_end_buffer_m)) > 0,
+    on_ungeocoded_road = !is.na(nearest_road) &
+      paste(local_authority, nearest_road) %in% ungeocoded_keys,
+    group = case_when(
+      local_authority %in% la_list_incomplete            ~ "excluded_list_incomplete",
+      segment_status == "original_exception"             ~ "control",
+      segment_status == "reverted_after_review"          ~ "reverted",
+      segment_status == "unclear"                        ~ "excluded_status_unclear",
+      on_ungeocoded_road                                 ~ "excluded_not_geocoded",
+      # Includes proposed_not_confirmed segments, which are still 20mph.
+      TRUE                                               ~ "treated"
+    )
+  )
+
+# Validation: after the policy date, control collisions should be recorded
+# at 30mph and treated ones at 20mph.
+collisions_allocated |>
+  st_drop_geometry() |>
+  filter(period == "post") |>
+  count(group, speed_limit) |>
+  pivot_wider(names_from = speed_limit, names_prefix = "mph_", values_from = n, values_fill = 0)
+
+write_rds(st_drop_geometry(collisions_allocated), "data/stats19_collisions_wales_allocated.rds")
 ```
