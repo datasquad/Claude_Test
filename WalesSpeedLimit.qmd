@@ -60,7 +60,7 @@ Two ways to resurrect this route, not yet pursued: (i) search the DataMapWales c
 
 **Control-road list: compiled from local authority sources.** Since the DataMapWales route didn't pan out, the exception/reverted-road list was built directly by working through each Welsh local authority's own published sources (council pages, local press coverage of council decisions). It currently covers 16 of the 22 Welsh local authorities (430 roads or sections total): Newport (88), Caerphilly (61), Vale of Glamorgan (52), Wrexham (48), Torfaen (36), Powys (29), Rhondda Cynon Taf (26), Isle of Anglesey (24), Conwy (19), Swansea (17), Flintshire (14), Merthyr Tydfil (4), Cardiff (4), Bridgend (3), Gwynedd (3), Ceredigion (2). Six authorities have no rows, for two different reasons: Denbighshire, Neath Port Talbot, Monmouthshire and Blaenau Gwent confirmed they made no (or no *named*) changes — a real finding, not a data gap — while Pembrokeshire's and Carmarthenshire's lists exist but weren't extractable from any accessible source (Pembrokeshire's is only on the broken DataMapWales map or in person at County Hall; Carmarthenshire's review PDF returned a 403 error).
 
-Each row carries a `status`: `original_exception` (30mph by Order from the start), `reverted_after_review` (set to 20mph initially, then reverted following the Welsh Government's 2024 review), `proposed_not_confirmed` (still under consultation — not yet a real exception; exclude from the core treatment/control assignment, or at most treat as a sensitivity check), or `unclear`. Some important caveats: Cardiff's and Swansea's *original* (day-one) exception lists were never published as text, only as an unlabelled interactive map, so what's captured for them here is only their much smaller 2025 proposed-reversion lists — a real gap for two of the highest-power authorities that's worth closing before finalising the estimation sample. Gwynedd similarly has roughly 85 original exceptions that were never individually named in any source found; only 3 roads under a later review made it in. `road_name` was compiled via AI summarisation and often shortens the source, so the section each row covers is recorded separately in `extent_text`, copied verbatim from `source_url` (several sections joined by " | "). For Powys the text comes from the draft Order linked from the source page, and for the Vale of Glamorgan from the scanned sealed Order, with its OCR errors corrected. `extent_detail` grades how well the source pins the section down: `precise` (start and end fixed by junctions or measured distances, as in a Traffic Regulation Order), `whole_road`, `approximate` (from/to landmarks without measured points), `vague` (e.g. "in part", "north of the school") or `none` (the source names the road only). `extent_note` records caveats, e.g. that Torfaen's source page is now offline, so its extents could not be re-checked. @sec-data-treatment below loads this compiled file (`data/wales_30mph_exceptions.csv`).
+Each row carries a `status`: `original_exception` (30mph by Order from the start), `reverted_after_review` (set to 20mph initially, then reverted following the Welsh Government's 2024 review), `proposed_not_confirmed` (still under consultation — not yet a real exception; exclude from the core treatment/control assignment, or at most treat as a sensitivity check), or `unclear`. Some important caveats: Cardiff's and Swansea's *original* (day-one) exception lists were never published as text, only as an unlabelled interactive map, so what's captured for them here is only their much smaller 2025 proposed-reversion lists — a real gap for two of the highest-power authorities that's worth closing before finalising the estimation sample. Gwynedd similarly has roughly 85 original exceptions that were never individually named in any source found; only 3 roads under a later review made it in. `road_name` was compiled via AI summarisation and often shortens the source, so the section each row covers is recorded separately in `extent_text`, copied verbatim from `source_url` (several sections joined by " \| "). For Powys the text comes from the draft Order linked from the source page, and for the Vale of Glamorgan from the scanned sealed Order, with its OCR errors corrected. `extent_detail` grades how well the source pins the section down: `precise` (start and end fixed by junctions or measured distances, as in a Traffic Regulation Order), `whole_road`, `approximate` (from/to landmarks without measured points), `vague` (e.g. "in part", "north of the school") or `none` (the source names the road only). `extent_note` records caveats, e.g. that Torfaen's source page is now offline, so its extents could not be re-checked. @sec-data-treatment below loads this compiled file (`data/wales_30mph_exceptions.csv`).
 
 ### Allocating collisions to exception road segments {#sec-allocation}
 
@@ -265,14 +265,23 @@ similar_url <- paste0(
 exceptions_compiled <- read_csv("data/wales_30mph_exceptions.csv") |>
   mutate(
     # Split "A4051 Malpas Road" / "Coast Road B4239 (multiple sections)"
-    # into road number and road name.
-    road_number = str_extract(road_name, "\\b[ABM]\\d{1,4}\\b"),
-    road_base   = road_name |>
+    # into road number and road name. Extent wording names other roads,
+    # so drop it first: a bracketed extent ("Pencoed Way/Coychurch Road
+    # (157m east of junction with A473 ...)", unlike "Aberthin Road
+    # (A4222)") or a trailing clause ("Rudry Road from its junction with
+    # ...", "Hengoed Avenue, Cefn Hengoed, between the junction with the
+    # A469 ...").
+    name_part   = road_name |>
+      str_remove_all("\\([^)]*(?:junction|metres|\\d+m\\b|section)[^)]*\\)") |>
+      str_remove("\\s+(?:from|between|near|heading|approaching|roughly|north of|south of|west of|east of)\\b.*$"),
+    road_number = str_extract(name_part, "\\b[ABM]\\d{1,4}\\b"),
+    road_base   = name_part |>
       str_remove("\\s*[\\(,].*$") |>
       str_remove("\\b[ABM]\\d{1,4}\\b") |>
       str_squish() |>
       na_if("")
-  )
+  ) |>
+  select(-name_part)
 
 exceptions_compiled |> count(local_authority, status) |> print(n = Inf)
 
@@ -289,26 +298,66 @@ write_rds(exceptions_compiled, "data/wales_30mph_exceptions.rds")
 
 ### Exception road segments and collision allocation {#sec-data-segments}
 
-These chunks implement the allocation described in @sec-allocation. The first writes a template for the segment table, with one row per compiled exception and the extent text pre-filled where it was recorded. It is completed by hand from `source_url` -- splitting multi-section rows, and filling `from_road`, `to_road`, `length_m` and `direction` -- and saved as `data/wales_30mph_exception_segments.csv`.
+These chunks implement the allocation described in @sec-allocation. The first builds the segment table: one row per section (several sections of one exception are joined by " | " in `extent_text`), with the extent wording parsed by `R/parse_extents.R` into
+
+- `from_road`, plus `from_offset_m` / `from_offset_dir` when the section starts at a point measured from that junction ("from a point 155 metres west of its junction with Pentre Tai Road");
+- `to_road`, plus `to_offset_m` / `to_offset_dir` when it ends at a measured point; or instead
+- `length_m` and `direction` ("for a distance of 605 metres east").
+
+Directions are compass points (`north`, `south_west`, ...). `manual_check` says what could not be parsed or needs checking by hand; it is empty where the segment can be cut automatically. The parsed table is written as a template, and the first time also copied to `data/wales_30mph_exception_segments.csv`, which is the hand-completed version that `build-exception-segments` reads and that this chunk never overwrites.
 
 ```{r}
 #| label: exception-segments-template
 #| eval: false
 
+source("R/parse_extents.R")
+
 segments_template <- exceptions_compiled |>
+  mutate(exception_id = row_number()) |>
+  separate_longer_delim(extent_text, " | ") |>
+  mutate(
+    # Powys names roads as "Place number [name]": the C/U numbers are not
+    # in OS Open Roads, so the road is found by its name where it has one.
+    road_number = if_else(local_authority == "Powys",
+                          str_extract(road_name, "\\b[ABCU]\\d{3,4}\\b"), road_number),
+    road_base = if_else(local_authority == "Powys",
+                        str_match(str_remove(road_name, "\\s*\\(.*\\)$"), "\\b[ABCU]\\d{3,4}\\s+(.+)$")[, 2],
+                        road_base),
+    # Newport-style sections start with their own road name.
+    section_road = str_match(extent_text, "^([^,]+?),\\s+(?i)from\\b")[, 2],
+    road_number = coalesce(str_extract(section_road, "\\b[AB]\\d{1,4}\\b"), road_number),
+    road_base = if_else(
+      is.na(section_road), road_base,
+      section_road |>
+        str_remove_all("\\b[AB]\\d{1,4}\\b|\\s*\\([^)]*\\)|(?i)\\b(?:north|south|east|west)bound\\b|(?i)\\b(?:on|off)-slip\\b") |>
+        str_squish() |>
+        na_if("")
+    ),
+    # "Swansea Road/Carmarthen Road" spans two names: find it by number.
+    road_base = if_else(str_detect(road_base, "/") & !is.na(road_number), NA_character_, road_base),
+    parsed = map(extent_text, parse_extent)
+  ) |>
+  unnest(parsed) |>
+  mutate(manual_check = pmap_chr(pick(everything()), \(...) flag_extent(list(...)))) |>
   transmute(
-    segment_id = row_number(),
+    segment_id = row_number(), exception_id,
     local_authority, road_name, road_number, road_base, extent_text, extent_detail,
-    from_road = NA_character_,   # junction the exempt section starts at
-    to_road   = NA_character_,   # junction it ends at, or ...
-    length_m  = NA_real_,        # ... its length from from_road
-    direction = NA_character_,   # north/south/east/west, if stated
-    status, source_url
+    from_road, from_offset_m, from_offset_dir,
+    to_road, to_offset_m, to_offset_dir,
+    length_m, direction,
+    manual_check, status, source_url
   )
 
+segments_template |>
+  mutate(needs_manual = manual_check != "") |>
+  count(local_authority, needs_manual) |>
+  pivot_wider(names_from = needs_manual, names_prefix = "manual_", values_from = n, values_fill = 0) |>
+  print(n = Inf)
+
+write_csv(segments_template, "data/wales_30mph_exception_segments_template.csv", na = "")
 # Never overwrite the hand-completed version.
-if (!file.exists("data/wales_30mph_exception_segments_template.csv")) {
-  write_csv(segments_template, "data/wales_30mph_exception_segments_template.csv")
+if (!file.exists("data/wales_30mph_exception_segments.csv")) {
+  write_csv(segments_template, "data/wales_30mph_exception_segments.csv", na = "")
 }
 ```
 
@@ -362,11 +411,19 @@ build_segment <- function(seg, links) {
     )
   }
 
-  road <- if (!is.na(seg$road_base)) {
-    links |> filter(name_1 == seg$road_base)
-  } else {
-    links |> filter(road_classification_number == seg$road_number)
+  # Sections without a usable extent are digitised by hand, not guessed.
+  if (seg$extent_detail %in% c("none", "vague") ||
+      (seg$extent_detail == "approximate" && (is.na(seg$from_road) || is.na(seg$to_road))) ||
+      (seg$extent_detail == "precise" && is.na(seg$from_road))) {
+    return(out(NULL, "manual_extent"))
   }
+
+  # A road by name, or an A/B road by number ("A4042", "B4388").
+  road_links <- function(ref) {
+    if (str_detect(ref, "^[AB]\\d+$")) filter(links, road_classification_number == ref)
+    else filter(links, name_1 == ref)
+  }
+  road <- road_links(coalesce(seg$road_base, seg$road_number))
   if (nrow(road) == 0) return(out(NULL, "road_not_found"))
 
   line <- road |> st_union() |> st_cast("MULTILINESTRING") |> st_line_merge()
@@ -376,8 +433,8 @@ build_segment <- function(seg, links) {
 
   # Distance along the road at which it meets the named cross road (NA if
   # they don't meet, or meet more than once).
-  junction_at <- function(cross_name) {
-    cross <- links |> filter(name_1 == cross_name) |> st_union()
+  junction_at <- function(cross_ref) {
+    cross <- road_links(cross_ref) |> st_union()
     if (length(cross) == 0 || st_is_empty(cross)) return(NA_real_)
     pts <- st_intersection(line, cross)
     if (length(pts) == 0 || st_is_empty(pts)) return(NA_real_)
@@ -386,28 +443,40 @@ build_segment <- function(seg, links) {
     st_line_project(line, pts, normalized = FALSE)
   }
 
-  from_m <- junction_at(seg$from_road)
-  if (is.na(from_m)) return(out(NULL, "manual_from_junction"))
-
-  if (!is.na(seg$to_road)) {
-    to_m <- junction_at(seg$to_road)
-    if (is.na(to_m)) return(out(NULL, "manual_to_junction"))
-  } else if (!is.na(seg$length_m)) {
-    # "For a distance of 280 metres": keep the cut only if exactly one
-    # direction fits on the road, or the stated compass direction picks one.
-    fits <- c(from_m + seg$length_m, from_m - seg$length_m)
+  # Position `dist` metres along the road from `pos`, in compass direction
+  # `dir`; without a direction, only if exactly one side fits on the road.
+  compass <- list(north = c(0, 1), south = c(0, -1), east = c(1, 0), west = c(-1, 0),
+                  north_east = c(1, 1), north_west = c(-1, 1),
+                  south_east = c(1, -1), south_west = c(-1, -1))
+  move_along <- function(pos, dist, dir) {
+    if (is.na(dist) || dist == 0) return(pos)
+    fits <- c(pos + dist, pos - dist)
     fits <- fits[fits >= 0 & fits <= road_length]
-    if (length(fits) == 2 && !is.na(seg$direction)) {
-      start <- st_coordinates(st_line_interpolate(line, from_m))
+    if (length(fits) == 2 && !is.na(dir)) {
+      start <- st_coordinates(st_line_interpolate(line, pos))
       cands <- st_coordinates(st_line_interpolate(line, fits))
-      shift <- switch(seg$direction,
-        north = cands[, "Y"] - start[, "Y"], south = start[, "Y"] - cands[, "Y"],
-        east  = cands[, "X"] - start[, "X"], west  = start[, "X"] - cands[, "X"]
-      )
+      shift <- (cands[, "X"] - start[, "X"]) * compass[[dir]][1] +
+               (cands[, "Y"] - start[, "Y"]) * compass[[dir]][2]
       fits <- fits[shift > 0]
     }
-    if (length(fits) != 1) return(out(NULL, "manual_direction"))
-    to_m <- fits
+    if (length(fits) == 1) fits else NA_real_
+  }
+
+  from_jct <- junction_at(seg$from_road)
+  if (is.na(from_jct)) return(out(NULL, "manual_from_junction"))
+  from_m <- move_along(from_jct, seg$from_offset_m, seg$from_offset_dir)
+  if (is.na(from_m)) return(out(NULL, "manual_from_offset"))
+
+  if (!is.na(seg$to_road)) {
+    to_jct <- junction_at(seg$to_road)
+    if (is.na(to_jct)) return(out(NULL, "manual_to_junction"))
+    to_m <- move_along(to_jct, seg$to_offset_m, seg$to_offset_dir)
+    if (is.na(to_m)) return(out(NULL, "manual_to_offset"))
+  } else if (!is.na(seg$length_m)) {
+    # "For a distance of 280 metres": the stated direction picks the side,
+    # or the only side that fits on the road.
+    to_m <- move_along(from_m, seg$length_m, seg$direction)
+    if (is.na(to_m)) return(out(NULL, "manual_direction"))
   } else {
     return(out(NULL, "manual_extent"))
   }
