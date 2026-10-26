@@ -4,3 +4,10 @@
 .httr-oauth
 .DS_Store
 .quarto
+
+# Large / derived data -- regenerate from WalesSpeedLimit.qmd. The hand-compiled
+# data/wales_30mph_exceptions.csv stays tracked.
+data/raw/
+*.RData
+*.rds
+*.zip
